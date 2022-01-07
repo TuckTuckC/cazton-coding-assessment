@@ -2,8 +2,8 @@ import React from 'react'
 
 function Box({num}) {
     return (
-        <div>
-            Box: {num}
+        <div className='box'>
+            <h1>{num}</h1>
         </div>
     )
 }

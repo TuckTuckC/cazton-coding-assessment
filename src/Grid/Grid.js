@@ -5,7 +5,7 @@ function Grid({order}) {
 console.log(order);
 
     return (
-        <div>
+        <div className='grid child'>
             {order.map((num, index) => {
                 console.log(num);
                 return(
