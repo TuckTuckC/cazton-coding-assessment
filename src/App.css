@@ -7,12 +7,16 @@
 }
 
 .App {
+  background-color: var(--silver);
   left: 15%;
-  margin: 10%;
+  padding: 3vh 3vw;
+  margin: 0;
+  height: 94vh;
+  width: 94vw;
   display: grid;
   grid-gap: 3vw;
-  grid-template-columns: 1fr 2fr 1fr;
-  grid-template-rows: auto;
+  grid-template-columns: 2fr 1fr 2fr;
+  grid-template-rows: 1fr 3fr;
 }
 
 .child {
@@ -20,6 +24,7 @@
 }
 
 btn {
+  display: flex;
   grid-column: 3 / 4;
   margin: 0;
   padding: 0.5vw;
@@ -28,8 +33,10 @@ btn {
   background: var(--medium-sea-green);
   color: white;
   font-size: 3vh;
+  border: 0.2vw solid var(--medium-blue);
   border-radius: 0.5vw;
   transition-duration: 0.3s;
+  align-self: center;
 }
 
 btn:hover {
@@ -37,18 +44,33 @@ btn:hover {
   transform: scale(1.1)
 }
 
-#input {
+.input {
+  background-color: var(--silver);
   grid-row: 2 / 3;
   grid-column: 2 / 3;
   padding: 0.5vw;
-  margin-top: 3vh;
+  margin: 0;
   height: 1.5vw;
   border-radius: 0.5vw;
-  border: 0.1vw solid black !important;
+  border: 0.2vw solid var(--medium-blue) !important;
   font-size: 3vh;
+  transition-duration: 0.3s;
+}
+
+.input:focus {
+  transform: scale(1.1);
+  outline: none;
+  border: 0.2vw solid var(--medium-blue) !important;
 }
 
 .grid {
+  background-color: var(--silver);
+  padding: 1.5vw;
+  height: 21vh;
+  width: 16.5vw;
+  margin: 20vh 0 0 0;
+  border: 0.2vw solid var(--medium-blue);
+  border-radius: 0.7vw;
   grid-column: 2 / 3;
   display: grid;
   grid-gap: 0.3vw;
@@ -57,12 +79,31 @@ btn:hover {
 }
 
 .box {
+  background-color: var(--brown);
+  color: white;
+  border: 0.2vw solid var(--medium-blue);
+  font-size: 2vh;
+  border-radius: 0.7vw;
   display: flex;
   margin: none;
-  width: 13vw;
-  height: 20vh;
-  border: 0.1vw solid black !important;
-  border-radius: 0.5vw;
+  width: 5vw;
+  height: 6vh;
   justify-content: center;
   align-items: center;
+}
+
+.error {
+  position: fixed;
+  margin: 0;
+  text-align: center;
+  bottom: 100vh;
+  left: 0;
+  width: 100vw;
+  height: 10vh;
+  background-color: #f07400;
+  transition: 0.5s ease-in-out;
+}
+
+.errorActive {
+  bottom: 90vh;
 }
