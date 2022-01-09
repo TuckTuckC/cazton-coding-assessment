@@ -30,11 +30,19 @@ function App() {
 		setOrder(newOrder);
 	};
 
+	const inFocus = $('#input').is(':focus')
+
+	const handleKeypress = e => {
+		if (e.keyCode === 13 && inFocus === true) {
+			rearrange()
+		}
+	}
+
   	return (
     	<div className="App">
 			<Grid order = {order} />
 			<btn className='child' onClick={() => rearrange()}>Re-Arrange</btn>
-			<input className='child' id='input' onChange={e => setInputValue(e.target.value)} type="text" placeholder='ex. 123456789' minLength="9" maxLength="9"></input>
+			<input onKeyPress={handleKeypress} className='child' id='input' onChange={e => setInputValue(e.target.value)} type="text" placeholder='ex. 123456789' minLength="9" maxLength="9"></input>
     	</div>
   	);
 };
